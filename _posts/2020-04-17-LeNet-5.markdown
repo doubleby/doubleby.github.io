@@ -1,0 +1,157 @@
+---
+layout: post
+title:  "Image Classification (1) - LeNet-5"
+description: Deep Learning Image Classification
+date:   2020-04-17 21:03:36 +0530
+categories: DeepLearning ImageClassification
+---
+---
+EfficientNet을 검색하다가 우연히 [HOYA012'S RESEARCH BLOG][1] 을 보고 image classification 기법들을 time series로 나열한 글을 보게되었다.
+
+아직 HOYA님만큼의 논문 읽기는 안되지만, 혼자 공부도 하고 정리할겸 HOYA님의 글과 검색을 통해 image classification의 기법들을 time series 순서로 작성하려고 한다.
+
+그리고 첫 블로그이고 첫 Post이다.
+
+---
+### Image Classification (1) -  LeNet-5 (1998)
+---
+
+LeNet-5는 image classification에서 거의 보편적으로 사용하는 Convolution Neural Network(CNN)을 최초로 제안한 기법입니다.
+
+그 당시 classifier로 주로 사용되던 Fully Connected Multi Layer Network가 가지는 한계점이 있었는데
+
+1. input의 pixel수가 많아지면 parameter가 기하급수적으로 증가하는 문제
+2. local한 distorion(image를 하나의 pixel shift)에 취약한 문제
+
+2가지 문제를 해결할 수 있는  Convolustion Neural Network 구조를 처음 제안하였습니다.
+
+* Fully Connected Multi Layer Network :  perceptron으로 이루어진 layer 여러개를 순차적으로 붙여놓은 형태입니다. Multi Layer Perceptron(MLP)라고도 부릅니다.
+
+input을 1차원적으로 바라보던 관점에서 2차원으로 확장하였고, parameter sharing을 통해 input의 pixel수가 증가해도 parameter수가 변하지 않는 특징을 가지고 있습니다.
+
+1990년대 당시에는 computing power가 부족했기 때문에 32x32라는 작은 size의 image를 input으로 사용하였습니다.
+
+LeNet-5의 구조를 보면서 좀더 자세히 알아보겠습니다.
+
+---
+
+![LeNet-5](https://i.imgur.com/YNxAI4N.png)
+
+---
+
+구조를 보게되면,
+
+Cx : convolution layer
+
+Sx : sub-sample layer
+
+Fx : fully-connected layer
+
+즉, 3개의 convolution layer와 2개의 sub-sample layer, 1개의 fully-connected layer로 구성되어있습니다. 그리고 activation function은 tanh을 사용합니다.
+
+
+(1) C1
+
+input 32x32 data를 6개의 5x5 filter에 통과시켜 6개의 28x28 feature map size로 생성합니다.
+여기서 parameter의 개수는 156개이며, 계산은 다음과 같습니다.
+
+* (25(weight) x 1(input feature map) + 1(bias)) x 6(output feature map) = 26 x 6 = 156
+
+
+(2) S2
+
+6개의 input 28x28을 6개의 2x2 filter에 통과시켜 6개의 14x14 feature map size로 생성합니다.
+
+2x2 filter를 2 stride로 설정하여 subsample하기 때문에, 14x14 feature map size로 생성됩니다.
+
+sub-sample을 average pooling으로 수행함으로써, 1개의 weight와 1개의 bias의 paramter를 가집니다.
+
+그리고 결과에 최종적으로 sigmoid함수가 적용됩니다.
+
+여기서 parameter의 개수는 12개이며, 계산은 다음과 같습니다.
+
+* (1(weight(average pooling)) +  1(bias)) x 6(output feature map) = 2 x 6 = 12
+
+
+(3) C3
+
+6개의 input 14x14을 16개의 5x5 filter를 통과시켜 16개의 10x10 feature map을 생성합니다.
+
+6개의 데이터로부터 16개를 만드는데, 아래의 테이블과 같이 선택적으로 연결을 시키며, network의 symmetry한 성질을 제거합니다.
+
+![C3](https://i.imgur.com/o9XTs08.png)
+
+1. 6개의 14x14 feature map에서 연속된 3개를 모아서 5x5x3 size filter와 conv 해줍니다(위의 그림, 0~5열). output으로 6개의 10x10 feature map이 산출됩니다.
+
+2. 6개의 14x14 feature map에서 연속된 4개를 모아서 5x5x4 size filter와 conv 해줍니다(위의 그림, 6~11열). output으로 6개의 10x10 feature map이 산출됩니다.
+
+3. 6개의 14x14 feature map에서 불연속한 4개를 모아서 5x5x5 size filter와 conv 해줍니다(위의 그림, 12~14열). output으로 3개의 10x10 feature map이 산출됩니다.
+
+4. 6개의 14x14 feature map 모두를 5x5x5 size filter와 conv 해줍니다. output으로 1개의 10x10 feature map이 산출됩니다.
+
+5. 최종적으로, 16개(6+6+3+1)의 10x10 feature map을 얻게됩니다.
+
+여기서 parameter 개수는 1516개이며, 계산은 다음과 같습니다.
+
+* (25(weight) x 3(input feature map) + 1(bias)) x 6(output feature map) = 456
+* (25(weight) x 4(input feature map) + 1(bias)) x 6(output feature map) = 606
+* (25(weight) x 4(input feature map) + 1(bias) x 3(output feature map)) = 303
+* (25(weight) x 6(input feature map) + 1(bias) x 1(output feature map)) = 151
+* 456 + 606 + 303 + 151 = 1516
+
+(4) S4
+16개의 feature map을 subsample하여 16개의 5x5 feature map으로 축소시킵니다.
+
+여기서 parameter 개수는 32개이며, 계산은 다음과 같습니다.
+
+* (1(weight) + 1(bias)) x 16(output feature map) = 32
+
+
+(5) C5
+16개의 5x5 feature map을 120개 5x5x16 filter size와 conv하여 120개의 1x1 feature map을 산출합니다.
+
+여기서 parameter 개수는 48120개이며, 계산은 다음과 같습니다.
+
+* (25(weight) x 16(input feature map) + 1(bias)) x 120(output feature map) = 48120
+
+
+(6) F6
+84개 unit을 가진 feed forward network입니다. C5의 output을 84개 unit으로 연결시킵니다.
+
+여기서 parameter 개수는 10164개이며, 계산은 다음과 같습니다.
+
+* (120(input feature map) + 1(bias)) x 84(output feature map) = 10164
+
+
+(7) output
+F6의 각각 84개 unit으로부터 input을 받고 이미지가 속한 class를 알려준다.
+
+최종적으로, LeNet-5가 작동하기 위한 parameter의 개수는 총 60000개이다.
+
+* 156 + 12 + 1516 + 32 + 48120 + 10164 = 60000
+
+
+---
+
+architecture를 자세히 알아보면서 algorithm을 이해할 수 있었던 정리였다.
+
+막상 분석을 하게되면, data를 보고 "이러한 기법을 사용해야지" 라고 생각하게된다.
+
+기법의 활용방식과 큰 틀은 알고 있지만 자세히 파고들어서 algorithm을 이해한 적은 없었던 것같다.
+
+이러한 post를 자주 올려서 기법의 algorithm을 이해하도록 노력해야겠다.
+
+---
+
+참고
+1. [https://arclab.tistory.com/150][2]
+2. [https://hoya012.github.io/blog/deeplearning-classification-guidebook-1/][3]
+3. [https://bskyvision.com/418][4]
+
+---
+
+
+[1]: https://hoya012.github.io
+[2]: https://arclab.tistory.com/150
+[3]: https://hoya012.github.io/blog/deeplearning-classification-guidebook-1/
+[4]: https://bskyvision.com/418
