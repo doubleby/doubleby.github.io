@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Image Classification (1) - LeNet-5"
-description: Deep Learning Image Classification
+description: 
 date:   2020-04-17 21:03:36 +0530
 categories: DeepLearning ImageClassification
 ---

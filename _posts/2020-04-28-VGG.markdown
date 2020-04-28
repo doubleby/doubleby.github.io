@@ -1,0 +1,221 @@
+---
+layout: post
+title:  "Image Classification (3) - VGG"
+description:
+date:   2020-04-28 21:03:36 +0530
+categories: DeepLearning ImageClassification
+---
+---
+
+2014년 Image Classification 대회에서 2등한 architecture입니다.
+
+1등인 GoogleNet과 1%도 안되는 error 차이를 보이며 아쉽게 2등을 했습니다.
+
+---
+
+## VGG의 구조
+
+---
+
+![VGG](https://i.imgur.com/h5O3eRx.png)
+
+VGG는 layer 개수에 따라 VGG-16, VGG-19 등으로 명칭합니다.
+
+VGG-16, VGG-19의 큰 틀은 위의 그림과 같습니다.
+
+위와 같은 큰 틀에서 convolution layer의 개수에 따라 명칭이 바뀌게 됩니다.
+
+VGG가 이전 architecture들과 큰 차이점은 비교적 작은 크기인 3 x 3 convolution filter를 깊게 쌓은 것입니다.
+
+비교적 작은 크기인 3 x 3 convolution filter를 쌓은 이유는 3개의 3 x 3 convolution layer를 중첩하면 1개의 7 x 7 convolution layer와 receptive field가 같아지지만, activation function을 많이 사용할 수 있어서 nonlinear를 고려할 수 있고 parameter 수도 줄어드는 효과를 얻을 수 있기 때문입니다. (3 x 3 x 3 =  27 < 7 x 7 = 49)
+
+이 방법을 통해, parameter 수가 적기때문에 학습의 속도가 빨라집니다.
+
+AlexNet은 8개의 layer를 사용했다면, VGG는 11개, 13개, 16개, 19개 등 많은 layer를 쌓았습니다.
+
+다음 그림이 layer 개수에 따른 VGG구조입니다.
+
+---
+
+![VGG2](https://i.imgur.com/ViTQk0K.png)
+
+A, B, C, D, E는  layer의 개수에 따라 지정하였습니다.
+
+A-LRN은 AlexNet에서 사용되던 Local Response Normalization을 사용하여 만들었습니다.
+
+하지만, performance 향상에 효과가 없다고 실험을 통해 확인하고 더 깊은 B, C, D, E에는 LRN을 적용하지 않았습니다.
+
+layer가 점점 깊어질수록 performance가 향상되는 것을 실험을 통해 관찰하였습니다.
+
+VGG의 큰 구조에 대해 알아보았고 VGG-16을 통해 좀 더 자세하게 알아보겠습니다.
+
+---
+
+## 1. input layer
+
+224 x 224 크기의 RGB 3channel image를 input으로 사용합니다.
+
+---
+
+## 2. 1st layer(convolution layer)
+
+64개의 3 x 3 x 3 filter로 input image를 conv해줍니다.
+
+이때, zero-padding은 1, stride 1로 설정하였습니다.
+
+그 결과로, 64개의 224 x 224 x 64 feature map이 생성됩니다.
+
+이어서, ReLU function을 activation해줍니다.
+
+각 layer마다 zero-padding과 stride는 동일하게 적용하므로, 다음 layer부터 생략하겠습니다.
+
+---
+
+### 3. 2nd layer(convolution layer)
+
+64개의 3 x 3 x 64 filter를 사용하여 1st layer output feature map을 conv해줍니다.
+
+이어서, 2 x 2 max pooling을 stride 2로 적용하여 112 x 112 x 64 feature map을 얻습니다.
+
+---
+
+### 4. 3rd layer(convolution layer)
+
+128개의 3 x 3 x 64 filter를 사용하여 2nd layer output feature map을 conv해줍니다.
+
+그 결과로, 112 x 112 x 128 feature map을 얻습니다.
+
+---
+
+### 5. 4th layer(convolution layer)
+
+128개의 3 x 3 x 128 filter로 3rd layer output feature map을 conv해줍니다.
+
+그 결과로, 112 x 112 x 128 feature map을 얻습니다.
+
+이어서, 2 x 2 max pooling을 stride 2로 적용하여, 56 x 56 x 128 feature map으로 축소시킵니다.
+
+---
+
+### 6. 5th layer(convolution layer)
+
+256개의 3 x 3 x 128 filter로 4th layer output feature map을 conv해줍니다.
+
+그 결과로, 56 x 56 x 256 feature map을 얻습니다.
+
+---
+
+### 7. 6th layer(convolution layer)
+
+256개의 3 x 3 x 256 filter로 5th layer output feature map을 conv해줍니다.
+
+그 결과로, 56 x 56 x 256 feature map을 얻습니다.
+
+---
+
+### 8. 7th layer(convolution layer)
+
+256개의 3 x 3 x 256 filter로 6th layer output feature map을 conv해줍니다.
+
+그 결과로, 56 x 56 x 256 feature map을 얻습니다.
+
+이어서, 2 x 2 max pooling을 stride 2로 적용하여, 28 x 28 x 256 feature map으로 축소시킵니다.
+
+---
+
+### 9. 8th layer(convolution layer)
+
+512개의 3 x 3 x 256 filter로 7th layer output feature map을 conv해줍니다.
+
+그 결과로, 28 x 28 x 512 feature map을 얻습니다.
+
+---
+
+### 10. 9th layer(convolution layer)
+
+512개의 3 x 3 x 512 filter로 8th layer output feature map을 conv해줍니다.
+
+그 결과로, 28 x 28 x 512 feature map을 얻습니다.
+
+---
+
+### 11. 10th layer(convolution layer)
+
+512개의 3 x 3 x 512 filter로 9th layer output feature map을 conv해줍니다.
+
+그 결과로, 28 x 28 x 512 feature map을 얻습니다.
+
+이어서, 2 x 2 max pooling을 stride 2로 적용하여, 14 x 14 x 512 feature map으로 축소시킵니다.
+
+---
+
+### 12. 11th layer(convolution layer)
+
+512개의 3 x 3 x 512 filter로 10th layer output feature map을 conv해줍니다.
+
+그 결과로, 14 x 14 x 512 feature map을 얻습니다.
+
+---
+
+### 13. 12th layer(convolution layer)
+
+512개의 3 x 3 x 512 filter로 11th layer output feature map을 conv해줍니다.
+
+그 결과로, 14 x 14 x 512 feature map을 얻습니다.
+
+---
+
+### 14. 13th layer(convolution layer)
+
+512개의 3 x 3 x 512 filter로 12th layer output feature map을 conv해줍니다.
+
+그 결과로, 14 x 14 x 512 feature map을 얻습니다.
+
+이어서, 2 x 2 max pooling을 stride 2로 적용하여, 7 x 7 x 512 feature map으로 축소시킵니다.
+
+---
+
+### 15. 14th layer(fully connected layer)
+
+7 x 7 x 512인 13th layer output feature map을 flatten해줍니다.
+
+그 결과로, 7 x 7 x 512 = 25088개의 뉴런이 생성됩니다.
+
+생성된 뉴런을 14th layer의 4096개의 뉴런과 dropout하여 fully connected합니다.
+
+---
+
+### 16. 15th layer(fully connected layer)
+
+14th layer에서 dropout된 4096개의 뉴런을 15th layer의 4096개의 뉴런과 dropout하여 fully connected합니다.
+
+---
+
+### 17. 16th layer(fully connected layer)
+
+15th layer에서 dropout된 4096개의 뉴런을 16th layer의 1000개의 뉴런과 fully connected합니다.
+
+이때, softmax function으로 output 값들을 activation합니다.
+
+마지막으로, 1000개의 class를 classification합니다.
+
+---
+
+VGG는 같은 해의 대회에서 2등을 받았습니다.
+
+하지만, 1등을 했던 googlenet에 비해 쉬운 architecture를 가지고 있고 성능도 미미하기 때문에 오히려 더 1등보다 각광을 받았습니다.
+
+post를 하면서도 convlution을 깊게 만든 단순한 구조라서 각광받은 이유를 알 수 있었던 것 같습니다.
+
+그리고 매번 저에게 많은 공부가 되는 블로거 두분에 감사의 말씀드립니다.
+
+---
+
+참고
+1. [https://hoya012.github.io/blog/deeplearning-classification-guidebook-1/][1]
+2. [https://bskyvision.com/421][2]
+
+---
+
+[1]: https://hoya012.github.io/blog/deeplearning-classification-guidebook-1/
+[2]: https://bskyvision.com/421
