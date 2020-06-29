@@ -7,7 +7,7 @@ categories: Self-Supervised-Learning
 ---
 ---
 
-데이터를 학습시킬때, 대부분 성능이 좋은 Supervised Learning으로 학습시킵니다. Supervised Learning이 성능이 좋지만 학습시키기 위해서는 많은 양의 데이터가 필요합니다. 그리고 labeled 데이터를 구하기는 어렵고 비쌉니다. 혹여, 직접 데이터를 labeling하는 작업을 하더라도, 많은 시간과 비용을 필요로 합니다.
+데이터를 학습시킬때, 대부분 성능이 좋은 Supervised Learning으로 학습시킵니다. 하지만, 성능이 좋지만 학습시키기 위해서는 많은 양의 데이터가 필요합니다. 그리고 labeled 데이터를 구하기는 어렵고 비쌉니다. 혹여, 직접 데이터를 labeling하는 작업을 하더라도, 많은 시간과 비용을 필요로 합니다.
 이 문제를 해결하기 위해서 Semi-Supervised Learning과 Unsupervised Learning의 연구가 활발히 진행되고 있습니다. 특히, Unsupervised Learning은 쉽고 많이 구할 수 있는 Unlabeled 데이터를 학습시킬 수 있는 학습법입니다. Unsupervised Learning중에서도 **Self-Supervised Learning** 은 AI의 대가 중 한분이신 얀 르쿤 교수님이 집중하고 있는 분야이며, 학계에서도 많은 주목을 받고 있습니다.
 
 이번 포스트는 요즘 핫한 Self-Supervised Learning의 시초가 되었던, '[Discriminative Unsupervised Feature Learning with Exemplar Convolution Neural Networks][paper]' 논문을 리뷰하겠습니다.
