@@ -61,7 +61,7 @@ image로부터 crop한 seed patch를 아래의 글과 같이, augmentation에 �
 1. STL-10 데이터를 물체를 포함하거나 물체의 일부분을 포함하는 considerable한 gradient가 있는 부분을 32 x 32 size patch crop
 1. crop한 original patch들마다 class를 지정
 1. crop한 original patch를 augmentation에 사용하는 transformation들을 적용하여 patch들을 생성
-1. 생성된 patch들을 모델에 input하였을때, original patch의 class가 도출하도록 학습하여 성능평가
+1. 생성된 patch들을 모델에 input하였을때, original patch의 class가 도출하도록 학습하여 성능 평가
 
 ### Architecture & Result
 
