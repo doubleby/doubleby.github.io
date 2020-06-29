@@ -3,7 +3,7 @@ layout: post
 title: "Exemplar"
 description:
 date: 2020-06-29 21:03:36 +0530
-categories: Self-Supervised Learning
+categories: Self-Supervised-Learning
 ---
 ---
 
