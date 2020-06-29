@@ -71,7 +71,7 @@ image로부터 crop한 seed patch를 아래의 글과 같이, augmentation에 �
 - **64c5-128c5-256c5-512f** : convolution layer with 64 filters(5 x 5 region) -> 2 x 2 max-pooling -> convolution layer with 128 filters(5 x 5 region) -> 2 x 2 max-pooling -> convolution layer with 256 filters(5 x 5 region) -> fully connected layer with 512 units(dropout) -> softmax layer
 - **92c5-256c5-512c5-1024f** : convolution layer with 92 filters(5 x 5 region) -> 2 x 2 max-pooling -> convolution layer with 256 filters(5 x 5 region) -> 2 x 2 max-pooling -> convolution layer with 512 filters(5 x 5 region) -> fully connected layer with 1024 units(dropout) -> softmax layer
 
-논문에서 제안하는 Exemplar-CNN 모델들을 STL-10, CIFAR-10, Caltech-101, Caltech-256 데이터에 적용하였을때, 기존의 모델들과, Supervised 모델과의 비교결과는 아래의 표와 같습니다.
+논문에서 제안하는 Exemplar-CNN 모델들을 STL-10, CIFAR-10, Caltech-101, Caltech-256 데이터에 적용하였을때, 기존의 모델들과, Supervised 모델과의 비교 결과는 아래의 표와 같습니다.
 
 ![img](https://i.imgur.com/vPcNNJw.png)
 
