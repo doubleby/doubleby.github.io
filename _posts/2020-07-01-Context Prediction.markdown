@@ -59,8 +59,7 @@ network가 patch들 간의 관계를 학습할때, high-level semantc을 이용�
 
 **첫번째** 는 **projection** 으로써, RGB값을 아래의 식과 같이 변형하였습니다.
 
-$$a(RGB의 값) = [-1, 2, -1]$$
-$$B = I - a^Ta/(aa^T)$$
+![img](https://i.imgur.com/DC0NzQF.png)
 
 RGB값을 위와 같은 수식으로 모든 pixel의 값을 변형함으로써,  chromatic abbreation을 해결할 수 있었습니다.
 
