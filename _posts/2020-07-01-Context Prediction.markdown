@@ -53,7 +53,7 @@ network가 patch들 간의 관계를 학습할때, high-level semantc을 이용�
 
 ### Chromatic Abberration
 
-하지만, 위와 같은 방법으로 사용해도 완전히 trival solution을 해결하진 못했습니다. 해결하지 못한 주 원인은 **chromatic aberration(색수차)** 이었으며, 렌즈가 빛의 파장에 따라 다른 굴절률을 가질때 나타나는 것입니다.
+하지만, 위와 같은 방법들을 사용해도 완전히 trival solution을 해결하진 못했습니다. 해결하지 못한 주 원인은 **chromatic aberration(색수차)** 이었으며, 렌즈가 빛의 파장에 따라 다른 굴절률을 가질때 나타나는 것입니다.
 
 이를 해결하기 위해 image의 구성요소인 **RGB(Red, Green, Blue)** 의 값들을 각각 분리하여 detection하는 ConvNet을 구성하였습니다. 그리고 detection한 RGB 값들을 변형하였습니다. RGB값을 변형시키는 방법을 2가지로 제안하였으며,
 
@@ -121,3 +121,5 @@ Context Prediction은 Caffe 툴과 ImageNet image를 training set으로 선정�
 [참고2]: https://hoya012.github.io/blog/Self-Supervised-Learning-Overview/
 [참고3]: https://seongkyun.github.io/study/2019/11/29/unsupervised/
 [참고4]: https://daeheepark.tistory.com/m/15?category=772193
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
