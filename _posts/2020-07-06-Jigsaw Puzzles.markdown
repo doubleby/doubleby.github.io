@@ -78,7 +78,7 @@ mechanism에 이어서 CFN의 **architecture** 의 특징은 아래와 같습니
 1. fc6에서 나온 output을 통합하여 fc7에 input
 1. 결과적으로 random하게 뽑은 patch 배열이 해당하는 index와 일치할 확률이 output으로 나오게 됩니다.
 
-위와 같은 architecture를 통해 기존의 AlexNet에 비해 절반 이하의 parameter를 가질 수 있었습니다. 하지만, parameter 수가 낮아졌다고해서 성능이 저주한 것은 아니였습니다. 기존의 AlexNet과 성능 차이는 사소한 차이였습니다.
+위와 같은 architecture를 통해 기존의 AlexNet에 비해 절반 이하의 parameter를 가질 수 있었습니다. parameter의 수가 줄어들었지만, 기존의 AlexNet과 성능 차이는 미비했습니다.
 
 ---
 
