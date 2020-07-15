@@ -7,7 +7,7 @@ categories: Self-Supervised-Learning
 ---
 ---
 
-이번 post는 이전 post와 달리 image의 pixel을 encoder하는 방식을 SSL에 적용한 논문인 '[Colorful Image Colorization][참고1]'의 리뷰입니다. 
+이번 post는 이전 post와 달리 image의 pixel을 encoder하는 방식을 SSL에 적용한 논문인 '[Colorful Image Colorization][참고1]'의 리뷰입니다.
 
 ---
 
@@ -51,13 +51,9 @@ CNN architecture 또한 당시에 존재하던 것들이 있었습니다. 첫번
 
 논문에서 제안하는 contribution 크게 2가지가 있습니다.
 1. 아래의 방법을 적용하여 automatic image colorization의 graphic problem을 진행하였습니다.
-
-(1) 기존의 classification loss function의 단점을 개선하여 colorization의 다양하고 불확실성을 다루는 objective function을 설계하였습니다.
-
-(2) 다른 image task에 적용할 수 있는 새로운 colorzation algorithm
-
-(3) 백만장의 color image를 학습시켜 새로운 최고 수위를 설정하였습니다.
-
+- 기존의 classification loss function의 단점을 개선하여 colorization의 다양하고 불확실성을 다루는 objective function을 설계하였습니다.
+- 다른 image task에 적용할 수 있는 새로운 colorzation algorithm
+- 백만장의 color image를 학습시켜 새로운 최고 수위를 설정하였습니다.
 1. SSL의 경쟁력있고 간단한 colorization task를 소개합니다.
 
 ---
@@ -173,9 +169,9 @@ conv1을 보게되면, Dersch와 Donahue에 비해 낮은 성능을 보입니다
 
 test할때, 2가지의 model을 사용하였습니다.
 
-**첫번째는**, 기존과 같은 grayscale을 input하여 **Ours(gray)** 라고 명칭했습니다.
+첫번째는, 기존과 같은 grayscale을 input하여 **Ours(gray)** 라고 명칭했습니다.
 
-**두번째는**, ab channel의  초기 가중치를 0으로 하여 conv1에서 3-channel 모두 다 받을 수 있도록 수정하고 **Ours(color)** 라고 명칭했습니다.
+두번째는, ab channel의  초기 가중치를 0으로 하여 conv1에서 3-channel 모두 다 받을 수 있도록 수정하고 **Ours(color)** 라고 명칭했습니다.
 
 결과를 자세히 보게 되면, 3부분 모두에서 강한 성능을 보이는 것을 알 수 있습니다. 특히, classification과 segmentation에서 최고의 성능을 보임을 알 수 있습니다.
 
