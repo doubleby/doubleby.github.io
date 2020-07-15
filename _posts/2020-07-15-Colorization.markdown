@@ -1,10 +1,14 @@
 ---
 layout: post
-title: "Cross Channel Encoder(Colorization)"
+title: "Colorization"
 description:
 date: 2020-07-15 21:03:36 +0530
 categories: Self-Supervised-Learning
 ---
+---
+
+이번 post는 이전 post와 달리 image의 pixel을 encoder하는 방식을 SSL에 적용한 논문인 '[Colorful Image Colorization][참고1]'의 리뷰입니다. 
+
 ---
 
 ## Colorization
