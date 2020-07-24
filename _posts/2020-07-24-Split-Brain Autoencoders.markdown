@@ -2,7 +2,7 @@
 layout: post
 title: "Split-Brain Autoencoders"
 description:
-date: 2020-07-15 21:03:36 +0530
+date: 2020-07-24 21:03:36 +0530
 categories: Self-Supervised-Learning
 ---
 ---
