@@ -44,7 +44,7 @@ inpainting은 주로 textural structure에 대한 추론은 가능한 반면, co
 
 ### Cross-Channel Encoders
 
-이 논문에서는 더 나아가 다양한 channel 변환 문제들과 training objectives를 조직적인 평가에 의해 **CCE(Cross-Channel Encoders)** 의 공간을 연구합니다. 그러나 CCE는 input data의 channel들이 똑같이 다루지 않는 **내제적인 handicap** 을 가지고 있습니다. 즉, data의 일부분은 feature extraction을 위해 사용되고 다른 부분들은 예측을 위해 사용됩니다. colorization의 경우에, network는 color information을 사용하지 않고 오직 grayscale image로 부터 feature를 extract했습니다.
+이 논문에서는 더 나아가 다양한 channel 변환 문제들과 training objectives를 조직적인 평가에 의해 **CCE(Cross-Channel Encoders)** 의 공간을 연구합니다. 그러나 CCE는 input data의 channel들이 똑같이 다루지 않는 **내제적인 handicap** 을 가지고 있습니다. 즉, data의 일부분은 feature extraction을 위해 사용되고 다른 부분들은 예측을 위해 사용됩니다.
 
 ### Split-Brain Autoencoders
 
