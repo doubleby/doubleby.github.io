@@ -23,7 +23,7 @@ Unsupervised Learning의 목표는 label의 사용 없이 data를 modeling하는
 
 ## Pretext Task
 
-최근 연구는 network의 architectire안에 있는 bottleneck을 통한 요약으로 abstraction을 강요하는 것 대신에, 학습하는 동안 **input의 일부를 보류** 하는 것을 수행합니다. 예를 들면, 아래와 같이 input의 일부를 drop하는 연구들이 있습니다.
+최근 연구는 network의 architecture안에 있는 bottleneck을 통한 요약으로 abstraction을 강요하는 것 대신에, 학습하는 동안 **input의 일부를 보류** 하는 것을 수행합니다. 예를 들면, 아래와 같이 input의 일부를 drop하는 연구들이 있습니다.
 
 1. denosing autoencoders - > input의 noise를 drop
 1. **context encoders** -> input의 random하게 block된 부분을 drop
@@ -183,8 +183,6 @@ Pascal dataset에서는 Classification외에도 Detection, Segmentation도 같�
 1. Split-Brain Autoencoder : full methods
 
 NYU-D에서도 Supervised Learning을 제외하고는 기존의 Unsupervised Learning과 비교하였을때, 높은 성능을 보였습니다.
-
-
 
 ---
 
