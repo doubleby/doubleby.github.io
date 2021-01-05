@@ -8,7 +8,7 @@ use_math : true
 ---
 ---
 
-정신없는 대학원 석사1기가 종강하고 방학이 되서야 숨통을 트이게 되었습니다. 그동안 소홀했던 블로그 포스팅을 이어서 진행하도록 하겠습니다.
+정신없는 대학원 석사1기가 종강하고 방학이 되서야 숨통을 트이게 되었습니다. 블로그 포스팅을 이어서 진행하도록 하겠습니다.
 
 ---
 
@@ -20,9 +20,9 @@ Unsupervised Learning은 NLP에서는 GPT와 BERT를 통해 매우 성공적인 
 
 이 방법을 활용하여 이 논문은 학습중에 진화함에 따라 **크고 일관성있는** dictionary를 구축하였습니다. 여기서 **큰** dictionary는 고차원적인 continous signal space를 더 잘 샘플링할 수 있을 것 같아서 크게 구축하였습니다. 그리고 dictionary의 key는 query와 비교가 **일관되도록** 동일한거나 유사한 인코더로 표시하도록 구축하였습니다. 이렇게 contrastive loss를 사용하고 크고 일관성있는 dictionaries를 구축하는 방법을 Momentum Contrast(MoCo)라고 표현하였습니다.
 
-![MoCo](https://i.imgur.com/NRAavjZ.jpg "MoCo")
+![MoCo Mechanism](https://i.imgur.com/NRAavjZ.jpg "MoCo Mechanism")
 
-위 그림은 MoCo의 mechanism을 설명하고 있습니다. $$ x_0^{key} $$ 수식확인
+위 그림은 MoCo의 mechanism을 설명하고 있습니다. $ x_0^{key} $ 수식확인
 
 ---
 
