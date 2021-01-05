@@ -5,7 +5,6 @@ description:
 date: 2020-12-28 21:03:36 +0530
 categories: Self-Supervised-Learning
 use_math : true
-comments : true
 ---
 ---
 
@@ -23,7 +22,7 @@ Unsupervised Learning은 NLP에서는 GPT와 BERT를 통해 매우 성공적인 
 
 ![MoCo](https://i.imgur.com/NRAavjZ.jpg "MoCo")
 
-위 그림은 MoCo의 mechanism을 설명하고 있습니다. $$ (X_0)^(key) $$ ㅇㅁㄴㅇ
+위 그림은 MoCo의 mechanism을 설명하고 있습니다. $$ x_0^{key} $$ 수식확인
 
 ---
 
