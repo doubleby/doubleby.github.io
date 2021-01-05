@@ -1,0 +1,35 @@
+---
+layout: post
+title: "MoCo"
+description:
+date: 2020-12-28 21:03:36 +0530
+categories: Self-Supervised-Learning
+use_math : true
+comments : true
+---
+---
+
+정신없는 대학원 석사1기가 종강하고 방학이 되서야 숨통을 트이게 되었습니다. 그동안 소홀했던 블로그 포스팅을 이어서 진행하도록 하겠습니다.
+
+---
+
+Unsupervised Learning은 NLP에서는 GPT와 BERT를 통해 매우 성공적인 성능을 보였습니다. 하지만, CV에서는 여전히 Supervised Learning이 Unsupervised Learning보다 더 좋은 성능을 발휘합니다. 이 논문에서는 뒤쳐지는 이유를 **각자의 signal space에서의 차이때문이라고 추측하였습니다.**
+
+이유에 대해서 조금 더 자세히 말씀드리면, NLP에서는 Unsupervised Learning의 기반이 될 수 있는 토큰화된 dictionaries를 구축하기 위해 word, sub-word units와 같이 **discrete signal space**를 가집니다. 하지만, CV에서는 raw signal이 **continuous signal space**와 고차원에 있기 때문에 dictionaries을 구축합니다.
+
+최근의 연구 주제를 살펴보면, **contrastive loss** 와 관련된 approach를 사용하여 Unsupervised Learning을 수행합니다. Contrastive loss approach의 논문들을 살펴보면, **dynamic dictionaries** 를 구축하는 것을 볼 수 있습니다. 여기서 dictionary의 "**keys**"는 image와 patches들과 같은 데이터로부터 샘플링되고 encoder network로 표시됩니다. 그리고 인코딩된 "**query**"가 매칭되는 key와 비슷해야하고 다른 key와는 유사하지 않게 훈련을 시킵니다. 이때, contrastive loss로 최소화를 진행합니다.
+
+이 방법을 활용하여 이 논문은 학습중에 진화함에 따라 **크고 일관성있는** dictionary를 구축하였습니다. 여기서 **큰** dictionary는 고차원적인 continous signal space를 더 잘 샘플링할 수 있을 것 같아서 크게 구축하였습니다. 그리고 dictionary의 key는 query와 비교가 **일관되도록** 동일한거나 유사한 인코더로 표시하도록 구축하였습니다. 이렇게 contrastive loss를 사용하고 크고 일관성있는 dictionaries를 구축하는 방법을 Momentum Contrast(MoCo)라고 표현하였습니다.
+
+![MoCo](https://i.imgur.com/NRAavjZ.jpg "MoCo")
+
+위 그림은 MoCo의 mechanism을 설명하고 있습니다. $$ (X_0)^(key) $$ ㅇㅁㄴㅇ
+
+---
+
+참고
+1. [https://arxiv.org/pdf/1807.05520.pdf][paper]
+
+---
+
+[paper]: https://arxiv.org/pdf/1807.05520.pdf
