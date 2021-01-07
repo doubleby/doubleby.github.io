@@ -2,7 +2,7 @@
 layout: post
 title: "MoCo"
 description:
-date: 2020-12-28 21:03:36 +0530
+date: 2021-01-07 21:03:36 +0530
 categories: Self-Supervised-Learning
 mathjax : true
 ---
@@ -18,11 +18,11 @@ Unsupervised Learning은 NLP에서는 GPT와 BERT를 통해 매우 성공적인 
 
 최근의 연구 주제를 살펴보면, **contrastive loss** 와 관련된 approach를 사용하여 Unsupervised Learning을 수행합니다. Contrastive loss approach의 논문들을 살펴보면, **dynamic dictionaries** 를 구축하는 것을 볼 수 있습니다. 여기서 dictionary의 "**keys**"는 image와 patches들과 같은 데이터로부터 샘플링되고 encoder network로 표시됩니다. 그리고 인코딩된 "**query**"가 매칭되는 key와 비슷해야하고 다른 key와는 유사하지 않게 훈련을 시킵니다. 이때, contrastive loss로 최소화를 진행합니다.
 
-이 방법을 활용하여 이 논문은 학습중에 진화함에 따라 **크고 일관성있는** dictionary를 구축하였습니다. 여기서 **큰** dictionary는 고차원적인 continous signal space를 더 잘 샘플링할 수 있을 것 같아서 크게 구축하였습니다. 그리고 dictionary의 key는 query와 비교가 **일관되도록** 동일한거나 유사한 인코더로 표시하도록 구축하였습니다. 이렇게 contrastive loss를 사용하고 크고 일관성있는 dictionaries를 구축하는 방법을 Momentum Contrast(MoCo)라고 표현하였습니다.
+이 방법을 활용하여 이 논문은 학습중에 진화함에 따라 **크고 일관성있는** dictionary를 구축하였습니다. 여기서 **큰** dictionary는 고차원적인 continous signal space를 더 잘 샘플링할 수 있을 것 같아서 크게 구축하였습니다. 그리고 dictionary의 key는 query와 비교가 **일관되도록** 동일한거나 유사한 인코더로 표시하도록 구축하였습니다. 이렇게 contrastive loss를 사용하고 크고 일관성있는 dictionaries를 구축하는 방법을 Momentum Contrast(MoCo)라고 표현하였고 아래의 그림과 같습니다.
 
 ![MoCo Mechanism](https://i.imgur.com/NRAavjZ.jpg "MoCo Mechanism")
 
-위 그림은 MoCo의 mechanism을 설명하고 있습니다. $ x_0^{key} $ 수식확인
+ $ x_0^{key} $ 수식확인
 
 ---
 
