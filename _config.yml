@@ -84,7 +84,7 @@ keywords: "Jekyll, NexT"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-# rss:
+rss: false
 
 # Specify the date when the site was setup
 #since: 2020
@@ -214,7 +214,7 @@ font:
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-  e-mail: <a href="mailto:bbye8525@gmail.com" title="contact">contact</a></p>
+  e-mail: <a href="mailto:bbye8525@gmail.com">bbye8525@gmail.com</a><br>
 
 
 # Social Links Icons
