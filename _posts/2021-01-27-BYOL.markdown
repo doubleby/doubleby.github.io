@@ -78,7 +78,10 @@ BYOL의 목표는 downstream tasks에 사용되는 representation $y_\theta$ 를
 + image augmentation인 $t$ ~ $\tau$와 $t'$ ~ $\tau'$을 적용하여 views인 $v = t(x)$ 와 $v' = t'(x)$를 산출
 + Online network에서 $v$ 를 encoder의 output인 representation $y_\theta = f_\theta(v)$ 을 구하고 projection의 output인  $z_\theta = g_\theta(y)$ 을 구하고 predictor를 수행하여 $q_\theta(z_\theta)$를 산출
 + Target network에서 $v'$ 를 encoder의 output인 $y_\xi' = f_\xi(v')$ 를 구하고 projection $z_\xi' = g_\xi(y')$ 의 output으로 $z_\xi'$ 을 산출
-+ $q_\theta(z_\theta)$ 와 $z_\xi'$ 를 $l_2$-normailzation 수행하여 $\bar{q_\theta}(z_\theta) = q_\theta(z_\theta)/\left \| q_\theta(z_\theta) \right \|_2$ 와 $\bar{z_\xi}' = z_\xi' / \left \| z_\xi' \right \|_2$ 를 산출
++ $q_\theta(z_\theta)$ 와 $z_\xi'$ 를 $l_2$-normalization 수행하여 아래와 같은 값을 산출
+
+![$l_2$-normalization](https://i.imgur.com/gGPOCAI.jpg "$l_2$-normalization")
+
 + $\bar{q_\theta}(z_\theta)$ 와 $\bar{z_\xi}'$ 를 아래와 같은 mean squared error loss 를 수행하여  $L_{\theta, \xi}$ 산출
 
 ![MSE loss](https://i.imgur.com/6BJWJbF.jpg "MSE loss")
