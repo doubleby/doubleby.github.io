@@ -214,7 +214,7 @@ font:
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 # social:
-  # e-mail: mailto:bbye8525@gmail.com
+  # e-mail: <a href="mailto:bbye8525@gmail.com" title="contact">contact</a></p>
 
 
 # Social Links Icons
