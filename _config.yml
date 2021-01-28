@@ -90,7 +90,7 @@ rss: false
 #since: 2020
 
 # icon between year and author @Footer
-authoricon: 
+authoricon:
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
@@ -380,8 +380,8 @@ han: false
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: drycall
   count: true
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
@@ -393,11 +393,11 @@ wildfire:
   # version - It's recommended to use the following versions.
   loaderVersion: 1.2.5 # https://www.npmjs.com/package/wildfire-comment
   useDev: true
-  version: 0.5.6 
+  version: 0.5.6
   # database config
   databaseProvider: firebase # or wilddog
   firebase: # your firebase config goes here ↓
-    apiKey: 
+    apiKey:
     authDomain:
     databaseURL:
     projectId:
@@ -408,8 +408,8 @@ wildfire:
   # other configs
   theme: light # or dark
   locale: en # or other locales, e.g. zh-CN
-  defaultAvatarURL: 
-# Any question? 
+  defaultAvatarURL:
+# Any question?
 # Raise an issue here: https://github.com/cheng-kang/wildfire/issues
 # </wildfire>
 
