@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Exemplar"
-description:
+description: "요즘 핫한 Self-Supervised Learning의 시초가 되었던 Exemplar 논문 리뷰"
 date: 2020-06-29 21:03:36 +0530
 categories: Self-Supervised-Learning
 ---
