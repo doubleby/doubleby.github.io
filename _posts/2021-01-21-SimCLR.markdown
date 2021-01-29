@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SimCLR"
-description:
+description: "Contrastive 방법과 3가지의 image augmentations을 사용한 SimCLR 논문 리뷰"
 date: 2021-01-21 21:03:36 +0530
 categories: Self-Supervised-Learning
 mathjax : true

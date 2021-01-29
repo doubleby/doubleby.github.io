@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "BYOL"
-description:
+description: "Contrastive 방법들의 negative pair를 사용하지 않고 2가지 network를 활용한 BYOL 논문 리뷰"
 date: 2021-01-27 21:03:36 +0530
 categories: Self-Supervised-Learning
 mathjax : true

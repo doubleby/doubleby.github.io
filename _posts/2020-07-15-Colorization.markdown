@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Colorization"
-description:
+description: "이전 방법과는 다르게 pixel encoder 방법을 사용한 Colorization 논문 리뷰"
 date: 2020-07-15 21:03:36 +0530
 categories: Self-Supervised-Learning
 ---

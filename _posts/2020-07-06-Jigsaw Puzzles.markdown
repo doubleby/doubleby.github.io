@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jigsaw Puzzles"
-description:
+description: "Context Prediction의 단점을 개선한 Jigsaw Puzzles 논문 리뷰"
 date: 2020-07-06 21:03:36 +0530
 categories: Self-Supervised-Learning
 ---
