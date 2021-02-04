@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MoCo"
+title: "Momentum Contrast for Unsupervised Visual Representation Learning 논문 리뷰"
 description: "이전의 방법들과는 다르게 contrastive learning을 활용한 MoCo 논문 리뷰"
 date: 2021-01-07 21:03:36 +0530
 categories: Self-Supervised-Learning
@@ -225,7 +225,7 @@ Mask R-CNN을 FPN backbone과 C4 backbone으로 구축하여 object detection와
 ---
 
 참고
-1. [https://arxiv.org/pdf/1807.05520.pdf][paper]
+1. [https://arxiv.org/pdf/1911.05722.pdf][paper]
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Split-Brain Autoencoders"
+title: "Split-Brain Autoencoders: Unsupervised Learning by Cross-Channel Prediction 논문 리뷰"
 description: "전통적인 Unsupervised Learning의 방법 중 하나는 Autoencoder의 단점을 보완하고 Colorization의 단점을 개선한 Split-Brain Autoencoders 논문 리뷰"
 date: 2020-07-24 21:03:36 +0530
 categories: Self-Supervised-Learning

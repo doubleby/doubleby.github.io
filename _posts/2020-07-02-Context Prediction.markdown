@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Context Prediction"
+title: "Unsupervised Visual Representation Learning by Context Prediction 논문 리뷰"
 description: "Exemplar의 단점을 개선한 Context Prediction 논문 리뷰"
 date: 2020-07-02 21:03:36 +0530
 categories: Self-Supervised-Learning

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rotations"
+title: "Unsupervised Representation Learning by Predicting Image Rotations 논문 리뷰"
 description: "Image의 augmentation 중 하나인 rotation을 활용한 Rotations 논문 리뷰"
 date: 2020-09-15 21:03:36 +0530
 categories: Self-Supervised-Learning

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Exemplar"
+title: "Discriminative Unsupervised Feature Learning with Exemplar Convolution Neural Networks 논문 리뷰"
 description: "요즘 핫한 Self-Supervised Learning의 시초가 되었던 Exemplar 논문 리뷰"
 date: 2020-06-29 21:03:36 +0530
 categories: Self-Supervised-Learning
