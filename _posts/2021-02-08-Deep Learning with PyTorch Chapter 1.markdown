@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Deep Learning with PyTorch (1)"
-description: "Eli Stevens, Luca Antiga, Thomas Viehmann, "Deep Learning with PyTorch" - Chapter 1"
+title: "Deep Learning with PyTorch Chapter 1"
+description: "Eli Stevens, Luca Antiga, Thomas Viehmann의 Deep Learning with PyTorch Chapter 1"
 date: 2021-02-08 21:03:36 +0530
 categories: Deep-Learning-with-PyTorch
 mathjax : true
