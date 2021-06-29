@@ -136,7 +136,7 @@ ImageNet과 다른 속성을 가진 non-EU instagram 10억개의 image로 SwAV�
 
 # Discussion
 
-현재 실정 설정이 supervised learning을 위해 설계 되었음에도 불구하고 self-supervised learning은 self-supervised learning에 비해 빠르게 진행되고 있으며 transfer learning을 능가합니다. 특히, architecture는 supervision되는 task를 위해 설계되었으며, supervision 없이 architecture를 탐색할 때 동일한 model이 나올지는 분명하지 않습니다. 최근 여러 연구에서 search나 pruning으로 architecture를 탐색하는 것이 supervision없이 가능하다는 것을 보여주었습니다. 이를 기반으로 model 탐색을 안내하는 방법의 능력을 평가할 계획입니다.
+현재 설정이 supervised learning을 위해 설계 되었음에도 불구하고 self-supervised learning은 self-supervised learning에 비해 빠르게 진행되고 있으며 transfer learning을 능가합니다. 특히, architecture는 supervision되는 task를 위해 설계되었으며, supervision 없이 architecture를 탐색할 때 동일한 model이 나올지는 분명하지 않습니다. 최근 여러 연구에서 search나 pruning으로 architecture를 탐색하는 것이 supervision없이 가능하다는 것을 보여주었습니다. 이를 기반으로 model 탐색을 안내하는 방법의 능력을 평가할 계획입니다.
 
 ---
 
