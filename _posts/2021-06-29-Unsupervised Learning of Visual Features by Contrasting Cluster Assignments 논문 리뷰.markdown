@@ -48,7 +48,7 @@ Method에서 언급드린 loss function에 대해서 자세히 알아보겠습�
 
 ![loss function](https://i.imgur.com/A5DD6Ag.jpg "loss function")
 
-이 loss function은 prototypes $C$와 feature $(z_nt)_{n,t}$ 를 생성하는데 사용되는 image encoder $f_{\theta}$ 의 parameter $\theta$와 관련하여 공동으로 최소화됩니다.
+이 loss function은 prototypes $C$와 feature $z_{nt}$ 를 생성하는데 사용되는 image encoder $f_{\theta}$ 의 parameter $\theta$와 관련하여 공동으로 최소화됩니다.
 
 ### Computing codes online
 
