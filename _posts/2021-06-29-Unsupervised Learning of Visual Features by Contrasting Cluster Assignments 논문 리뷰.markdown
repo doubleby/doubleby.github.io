@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Unsupervised Learning of Visual Features by Contrasting Cluster Assignmnets 논문 리뷰"
-description: "contrastive learning 기반의 접근법이 아닌, clustering 기반으로 연구한 self-supervised learning"
+description: "contrastive learning 기반의 접근법이 아닌, clustering 기반으로 연구한 SwAV 논문 리뷰"
 date: 2021-06-29 21:03:36 +0530
 categories: Self-Supervised-Learning
 mathjax : true
